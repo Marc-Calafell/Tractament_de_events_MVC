@@ -42,7 +42,7 @@ public class Controlador {
                     m.setTodo(String.valueOf(v.getItemField().getText()));
                    // v.llista.addElement(m.getTodo());
                    
-                   v.getResultat().setText("= " + m.getTodo());
+                   v.getResultat().setText(m.getTodo());
                     
                      //m.setTodo(v.ItemField.getText());
          

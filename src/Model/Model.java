@@ -5,26 +5,28 @@
  */
 package Model;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author mark
  */
 public class Model {
     
-    private String ItemField;
+    private String todo;
     private String[] llista;
 
     public Model(String todo, String[] llista) {
-        this.ItemField = todo;
+        this.todo = todo;
         this.llista = llista;
     }
 
-    public String getItemField() {
-        return ItemField;
+    public String getTodo() {
+        return todo;
     }
 
-    public void setItemField(String ItemField) {
-        this.ItemField = ItemField;
+    public void setTodo(String todo) {
+        this.todo = todo;
     }
 
     public String[] getLlista() {
@@ -35,6 +37,11 @@ public class Model {
         this.llista = llista;
     }
 
+    public void addllista(){
+    llista  = new DefaultListModel();
+       ItemList.setModel(llista);
+    
+    }
     
     
     

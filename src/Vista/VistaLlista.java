@@ -6,8 +6,10 @@
 package Vista;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 
@@ -225,4 +227,42 @@ public class VistaLlista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    
+    
+    
+    public JTextField getItemField() {
+        return ItemField;
+    }
+
+    public void setItemField(JTextField ItemField) {
+        this.ItemField = ItemField;
+    }
+
+    public JButton getAddButton() {
+        return AddButton;
+    }
+
+    public void setAddButton(JButton AddButton) {
+        this.AddButton = AddButton;
+    }
+
+    public JButton getClearButton() {
+        return ClearButton;
+    }
+
+    public void setClearButton(JButton ClearButton) {
+        this.ClearButton = ClearButton;
+    }
+
+    public JButton getClearOneButton() {
+        return ClearOneButton;
+    }
+
+    public void setClearOneButton(JButton ClearOneButton) {
+        this.ClearOneButton = ClearOneButton;
+    }
+
+    
+
 }
