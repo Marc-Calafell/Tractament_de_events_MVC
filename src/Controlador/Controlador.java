@@ -8,6 +8,8 @@ package Controlador;
 
 import Model.Model;
 import Vista.VistaLlista;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -24,13 +26,40 @@ public class Controlador {
         this.v=v;
         
         this.v.setVisible(true);
-        gettodo
+       v.getItemField().setText("your TODO here");
     
     
+       addtodo(m,v);
+       }
+       
+    
+    public void addtodo(Model m, VistaLlista v){
+       
+       ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                    m.setTodo(String.valueOf(v.getItemField().getText()));
+                   // v.llista.addElement(m.getTodo());
+                   
+                   v.getResultat().setText("= " + m.getTodo());
+                    
+                     //m.setTodo(v.ItemField.getText());
+         
+         //llista.addElement(Item);
+                
+            }
+
+        };
+        
+        
+        
+        
+        
     }
+       
     
     
-    
-    
-    
-}
+       
+       
+    }
