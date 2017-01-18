@@ -5,10 +5,8 @@
  */
 package Vista;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 
@@ -19,20 +17,17 @@ import javax.swing.JTextField;
  * @author mark
  */
 public class VistaLlista extends javax.swing.JFrame {
+//    Model model = new Model();
+//    Controlador controlador = new Controlador();
 
     /**
      * Creates new form VistaLlista
      */
     
-    DefaultListModel llista = new DefaultListModel();
+    
        
     public VistaLlista() {
         initComponents();
-        
-       llista  = new DefaultListModel();
-       ItemList.setModel(llista);
-       
-       
     }
 
     /**
@@ -153,29 +148,31 @@ public class VistaLlista extends javax.swing.JFrame {
     }//GEN-LAST:event_ItemFieldActionPerformed
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
-         String Item = ItemField.getText();
-         
-         llista.addElement(Item);
-        
+        // TODO add your handling code here:
+            // model.addElement(ItemField.getText());
 
-        
-        
         
     }//GEN-LAST:event_AddButtonActionPerformed
 
     private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearButtonActionPerformed
+        // TODO add your handling code here:
+            //model.clearAll();
+     
         
-        int drainList=ItemList.getSelectedIndex();
-        llista.removeAllElements();
     }//GEN-LAST:event_ClearButtonActionPerformed
 
     private void ClearOneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearOneButtonActionPerformed
-        int clearOne= ItemList.getSelectedIndex();
-        llista.remove(clearOne);
+        // TODO add your handling code here:
+            // Object o = ItemList.getSelectedValue();
+            // model.dropTodo(o);
+
+            
     }//GEN-LAST:event_ClearOneButtonActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
-        System.exit(0);
+        // TODO add your handling code here:
+            // model.exitTodo();
+        
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     /**
@@ -215,6 +212,30 @@ public class VistaLlista extends javax.swing.JFrame {
             }
         });
     }
+    
+        public JButton getAddButton() {
+        return AddButton;
+    }
+
+    public JButton getClearButton() {
+        return ClearButton;
+    }
+
+    public JButton getClearOneButton() {
+        return ClearOneButton;
+    }
+
+    public JButton getExitButton() {
+        return ExitButton;
+    }
+
+    public JTextField getItemField() {
+        return ItemField;
+    }
+
+    public JList<String> getItemList() {
+        return ItemList;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddButton;
@@ -228,41 +249,5 @@ public class VistaLlista extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    
-    
-    
-    public JTextField getItemField() {
-        return ItemField;
-    }
-
-    public void setItemField(JTextField ItemField) {
-        this.ItemField = ItemField;
-    }
-
-    public JButton getAddButton() {
-        return AddButton;
-    }
-
-    public void setAddButton(JButton AddButton) {
-        this.AddButton = AddButton;
-    }
-
-    public JButton getClearButton() {
-        return ClearButton;
-    }
-
-    public void setClearButton(JButton ClearButton) {
-        this.ClearButton = ClearButton;
-    }
-
-    public JButton getClearOneButton() {
-        return ClearOneButton;
-    }
-
-    public void setClearOneButton(JButton ClearOneButton) {
-        this.ClearOneButton = ClearOneButton;
-    }
-
-    
 
 }

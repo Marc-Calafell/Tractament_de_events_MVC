@@ -5,45 +5,66 @@
  */
 package Model;
 
-import javax.swing.DefaultListModel;
+import java.util.*;
+import javax.swing.AbstractListModel;
 
 /**
  *
  * @author mark
  */
-public class Model {
+public class Model extends AbstractListModel{
     
-    private String todo;
-    private String[] llista;
-
-    public Model(String todo, String[] llista) {
-        this.todo = todo;
-        this.llista = llista;
-    }
-
-    public String getTodo() {
-        return todo;
-    }
-
-    public void setTodo(String todo) {
-        this.todo = todo;
-    }
-
-    public String[] getLlista() {
-        return llista;
-    }
-
-    public void setLlista(String[] llista) {
-        this.llista = llista;
-    }
-
-    public void addllista(){
-    llista  = new DefaultListModel();
-       ItemList.setModel(llista);
     
+public final List<String> todo = new ArrayList<>();
+
+
+    public Model(){
+        
+        String el1 = "Todo 1";
+        String el2 = "Todo 2";
+        
+        todo.add(el1);
+        todo.add(el2);
+    }
+    
+ 
+@Override
+    public int getSize() {
+        return todo.size();
+    }
+    
+@Override
+    public Object getElementAt(int index){
+        
+        return todo.get(index);
     }
     
     
     
+    public void addElement(String x){
+        
+        todo.add(x);
+       fireContentsChanged(this, 0, todo.size());
+    }
     
+    
+    
+    public void dropTodo(Object o) {
+        try {
+            todo.remove(o);
+           fireContentsChanged(this, 0, todo.size());
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("No has seleccionat cap Item");
+        }
+    }
+
+    public void clearAll() {
+        todo.removeAll(todo);
+       fireContentsChanged(this, 0, todo.size());
+    }
+
+    public void exitTodo() {
+        System.exit(0);
+    }
+
 }
